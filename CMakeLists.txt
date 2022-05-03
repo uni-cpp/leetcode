@@ -2,11 +2,13 @@
 project( leetcode )
 
 set( HEADERS
-    ""
+    "include/leetcode/Solution153.hpp"
 )
 
 set( SOURCES
-    "main.cpp"
+    "app/main.cpp"
+
+    "src/leetcode/Solution153.cpp"
 )
 
 # treat_all_warnings_as_errors()
@@ -18,7 +20,7 @@ add_executable( ${PROJECT_NAME}
 
 target_include_directories( ${PROJECT_NAME}
     PRIVATE
-        ${SOURCE_DIR}/leetcode/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
 install( TARGETS ${PROJECT_NAME}
