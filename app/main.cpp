@@ -1,11 +1,82 @@
 #include <leetcode/Solution153.hpp>
 #include <leetcode/Solution162.hpp>
+#include <leetcode/Solution82.hpp>
 
 #include <iostream>
 
 auto
 main( int /*argc*/, char** /*argv*/ ) -> int
 {
+    {
+        leetcode::Solution82 solution;
+        auto* in1 = leetcode::create_linked_list( { 1, 2, 3, 3, 4, 4, 5 } );
+
+        constexpr auto expected = "[1,2,5]";
+        const auto actual = leetcode::serialize( solution.deleteDuplicates( in1 ) );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 82-1 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution82 solution;
+        auto* in2 = leetcode::create_linked_list( { 1, 1, 1, 2, 3 } );
+
+        if( leetcode::serialize( solution.deleteDuplicates( in2 ) ) != "[2,3]" )
+        {
+            std::cerr << "Example 82-2 not passed" << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution82 solution;
+        auto* in3 = leetcode::create_linked_list( { 1, 1, 1 } );
+
+        if( leetcode::serialize( solution.deleteDuplicates( in3 ) ) != "[]" )
+        {
+            std::cerr << "Example 82-3 not passed" << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution82 solution;
+        auto* in4 = leetcode::create_linked_list( { 1, 1, 2, 2 } );
+
+        if( leetcode::serialize( solution.deleteDuplicates( in4 ) ) != "[]" )
+        {
+            std::cerr << "Example 82-4 not passed" << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution82 solution;
+        auto* in5 = leetcode::create_linked_list( { } );
+
+        if( leetcode::serialize( solution.deleteDuplicates( in5 ) ) != "[]" )
+        {
+            std::cerr << "Example 82-5 not passed" << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution82 solution;
+        auto* in1 = leetcode::create_linked_list( { 1, 2, 2 } );
+
+        constexpr auto expected = "[1]";
+        const auto actual = leetcode::serialize( solution.deleteDuplicates( in1 ) );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 82-6 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
     {
         leetcode::Solution153 solution;
         std::vector< int16_t > in1{ 3, 4, 5, 1, 2 };

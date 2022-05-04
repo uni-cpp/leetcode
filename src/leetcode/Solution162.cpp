@@ -1,5 +1,8 @@
 #include <leetcode/Solution162.hpp>
 
+namespace leetcode
+{
+
 //   /
 //  /
 // /
@@ -20,8 +23,7 @@
 
 // 3-2-3                    0||2
 // 6, 5, 4, 3, 2, 3, 2      0||5
-namespace leetcode
-{
+
 int32_t
 leetcode::Solution162::findPeakElement( std::vector< int32_t >& nums )
 {
