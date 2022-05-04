@@ -3,12 +3,14 @@ project( leetcode )
 
 set( HEADERS
     "include/leetcode/Solution153.hpp"
+    "include/leetcode/Solution162.hpp"
 )
 
 set( SOURCES
     "app/main.cpp"
 
     "src/leetcode/Solution153.cpp"
+    "src/leetcode/Solution162.cpp"
 )
 
 # treat_all_warnings_as_errors()
