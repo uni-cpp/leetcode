@@ -3,6 +3,7 @@
 #include <leetcode/Solution162.hpp>
 #include <leetcode/Solution82.hpp>
 #include <leetcode/Solution844.hpp>
+#include <leetcode/Solution986.hpp>
 
 #include <iostream>
 
@@ -242,6 +243,38 @@ main( int /*argc*/, char** /*argv*/ ) -> int
         if( actual != expected )
         {
             std::cerr << "Example 844-3 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution986 solution;
+
+        std::vector< std::vector< int32_t > > vec1{ { 0, 2 }, { 5, 10 }, { 13, 23 }, { 24, 25 } };
+        std::vector< std::vector< int32_t > > vec2{ { 1, 5 }, { 8, 12 }, { 15, 24 }, { 25, 26 } };
+        const auto actual = solution.intervalIntersection( vec1, vec2 );
+        const std::vector< std::vector< int32_t > > expected = { { 1, 2 }, { 5, 5 }, { 8, 10 }, { 15, 23 }, { 24, 24 }, { 25, 25 } };
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 986-1 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution986 solution;
+
+        std::vector< std::vector< int32_t > > vec1{ { 0, 2 }, { 5, 10 }, { 13, 23 }, { 24, 25 } };
+        std::vector< std::vector< int32_t > > vec2{ };
+        const auto actual = solution.intervalIntersection( vec1, vec2 );
+        const std::vector< std::vector< int32_t > > expected = { };
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 986-2 not passed." << std::endl;
             std::cerr << "Actual " << actual << std::endl;
             std::cerr << "Expected: " << expected << std::endl;
         }

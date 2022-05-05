@@ -7,6 +7,7 @@ set( HEADERS
     "include/leetcode/Solution153.hpp"
     "include/leetcode/Solution162.hpp"
     "include/leetcode/Solution844.hpp"
+    "include/leetcode/Solution986.hpp"
 )
 
 set( SOURCES
@@ -17,6 +18,7 @@ set( SOURCES
     "src/leetcode/Solution153.cpp"
     "src/leetcode/Solution162.cpp"
     "src/leetcode/Solution844.cpp"
+    "src/leetcode/Solution986.cpp"
 )
 
 # treat_all_warnings_as_errors()
