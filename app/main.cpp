@@ -1,3 +1,4 @@
+#include <leetcode/Solution15.hpp>
 #include <leetcode/Solution153.hpp>
 #include <leetcode/Solution162.hpp>
 #include <leetcode/Solution82.hpp>
@@ -7,6 +8,51 @@
 auto
 main( int /*argc*/, char** /*argv*/ ) -> int
 {
+    {
+        leetcode::Solution15 solution;
+
+        std::vector< int32_t > in1{ -1, 0, 1, 2, -1, -4 };
+        const auto actual = solution.threeSum( in1 );
+        const std::vector< std::vector< int32_t > > expected = { { -1, -1, 2 }, { -1, 0, 1 } };
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 15-1 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution15 solution;
+
+        std::vector< int32_t > in2{ };
+        const auto actual = solution.threeSum( in2 );
+        const std::vector< std::vector< int32_t > > expected = { };
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 15-2 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution15 solution;
+
+        std::vector< int32_t > in3{ 0 };
+        const auto actual = solution.threeSum( in3 );
+        const std::vector< std::vector< int32_t > > expected = { };
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 15-3 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
     {
         leetcode::Solution82 solution;
         auto* in1 = leetcode::create_linked_list( { 1, 2, 3, 3, 4, 4, 5 } );

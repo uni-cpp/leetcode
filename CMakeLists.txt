@@ -2,6 +2,7 @@
 project( leetcode )
 
 set( HEADERS
+    "include/leetcode/Solution15.hpp"
     "include/leetcode/Solution82.hpp"
     "include/leetcode/Solution153.hpp"
     "include/leetcode/Solution162.hpp"
@@ -10,6 +11,7 @@ set( HEADERS
 set( SOURCES
     "app/main.cpp"
 
+    "src/leetcode/Solution15.cpp"
     "src/leetcode/Solution82.cpp"
     "src/leetcode/Solution153.cpp"
     "src/leetcode/Solution162.cpp"
