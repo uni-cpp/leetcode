@@ -2,6 +2,7 @@
 #include <leetcode/Solution153.hpp>
 #include <leetcode/Solution162.hpp>
 #include <leetcode/Solution82.hpp>
+#include <leetcode/Solution844.hpp>
 
 #include <iostream>
 
@@ -201,6 +202,48 @@ main( int /*argc*/, char** /*argv*/ ) -> int
         if( solution.findPeakElement( in5 ) != 0 && solution.findPeakElement( in5 ) != 5 )
         {
             std::cerr << "Example 162-5 not passed" << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution844 solution;
+
+        const auto actual = solution.backspaceCompare( "ab#c", "ad#c" );
+        const bool expected = true;
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 844-1 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution844 solution;
+
+        const auto actual = solution.backspaceCompare( "ab##", "c#d#" );
+        const bool expected = true;
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 844-2 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution844 solution;
+
+        const auto actual = solution.backspaceCompare( "a#c", "b" );
+        const bool expected = false;
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 844-3 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
         }
     }
 
