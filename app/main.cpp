@@ -2,6 +2,7 @@
 #include <leetcode/Solution15.hpp>
 #include <leetcode/Solution153.hpp>
 #include <leetcode/Solution162.hpp>
+#include <leetcode/Solution438.hpp>
 #include <leetcode/Solution82.hpp>
 #include <leetcode/Solution844.hpp>
 #include <leetcode/Solution986.hpp>
@@ -234,6 +235,45 @@ main( int /*argc*/, char** /*argv*/ ) -> int
         if( solution.findPeakElement( in5 ) != 0 && solution.findPeakElement( in5 ) != 5 )
         {
             std::cerr << "Example 162-5 not passed" << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution438 solution;
+        const std::vector< int32_t > expected{ 0, 6 };
+        const auto actual = solution.findAnagrams( "cbaebabacd", "abc" );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 438-1 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution438 solution;
+        const std::vector< int32_t > expected{ 0, 1, 2 };
+        const auto actual = solution.findAnagrams( "abab", "ab" );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 438-2 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution438 solution;
+        const std::vector< int32_t > expected{ 1 };
+        const auto actual = solution.findAnagrams( "baa", "aa" );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 438-3 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
         }
     }
 
