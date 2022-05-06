@@ -1,3 +1,4 @@
+#include <leetcode/Solution11.hpp>
 #include <leetcode/Solution15.hpp>
 #include <leetcode/Solution153.hpp>
 #include <leetcode/Solution162.hpp>
@@ -10,6 +11,36 @@
 auto
 main( int /*argc*/, char** /*argv*/ ) -> int
 {
+    {
+        leetcode::Solution11 solution;
+
+        std::vector< int32_t > in1{ 1, 8, 6, 2, 5, 4, 8, 3, 7 };
+        const auto actual = solution.maxArea( in1 );
+        const int32_t expected = 49;
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 11-1 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution11 solution;
+
+        std::vector< int32_t > in1{ 1, 1 };
+        const auto actual = solution.maxArea( in1 );
+        const int32_t expected = 1;
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 11-2 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
     {
         leetcode::Solution15 solution;
 
