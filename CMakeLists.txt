@@ -8,6 +8,7 @@ set( HEADERS
     "include/leetcode/Solution153.hpp"
     "include/leetcode/Solution162.hpp"
     "include/leetcode/Solution438.hpp"
+    "include/leetcode/Solution713.hpp"
     "include/leetcode/Solution844.hpp"
     "include/leetcode/Solution986.hpp"
 )
@@ -21,6 +22,7 @@ set( SOURCES
     "src/leetcode/Solution153.cpp"
     "src/leetcode/Solution162.cpp"
     "src/leetcode/Solution438.cpp"
+    "src/leetcode/Solution713.cpp"
     "src/leetcode/Solution844.cpp"
     "src/leetcode/Solution986.cpp"
 )

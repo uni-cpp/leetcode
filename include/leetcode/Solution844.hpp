@@ -25,6 +25,8 @@
 
 // Follow up: Can you solve it in O(n) time and O(1) space?
 
+#pragma once
+
 #include <string>
 
 namespace leetcode

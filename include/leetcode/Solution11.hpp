@@ -21,6 +21,8 @@
 //  2 <= n <= 105
 //  0 <= height[i] <= 104
 
+#pragma once
+
 #include <cstdint>
 #include <iostream>
 #include <vector>

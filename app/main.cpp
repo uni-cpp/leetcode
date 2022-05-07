@@ -3,6 +3,7 @@
 #include <leetcode/Solution153.hpp>
 #include <leetcode/Solution162.hpp>
 #include <leetcode/Solution438.hpp>
+#include <leetcode/Solution713.hpp>
 #include <leetcode/Solution82.hpp>
 #include <leetcode/Solution844.hpp>
 #include <leetcode/Solution986.hpp>
@@ -272,6 +273,34 @@ main( int /*argc*/, char** /*argv*/ ) -> int
         if( actual != expected )
         {
             std::cerr << "Example 438-3 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution713 solution;
+        constexpr uint32_t expected{ 8 };
+        std::vector< uint32_t > in1{ 10, 5, 2, 6 };
+        const auto actual = solution.numSubarrayProductLessThanK( in1, 100 );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 713-1 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution713 solution;
+        constexpr uint32_t expected{ 0 };
+        std::vector< uint32_t > in1{ 1, 2, 3 };
+        const auto actual = solution.numSubarrayProductLessThanK( in1, 0 );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 713-2 not passed." << std::endl;
             std::cerr << "Actual " << actual << std::endl;
             std::cerr << "Expected: " << expected << std::endl;
         }

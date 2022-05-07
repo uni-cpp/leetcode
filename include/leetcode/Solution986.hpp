@@ -23,6 +23,8 @@
 //  0 <= startj < endj <= 109
 //  endj < startj+1
 
+#pragma once
+
 #include <cstdint>
 #include <vector>
 

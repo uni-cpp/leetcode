@@ -20,6 +20,8 @@
 //  0 <= nums.length <= 3000
 //  -105 <= nums[i] <= 105
 
+#pragma once
+
 #include <cstdint>
 #include <iostream>
 #include <vector>
