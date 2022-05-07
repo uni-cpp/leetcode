@@ -2,6 +2,7 @@
 #include <leetcode/Solution15.hpp>
 #include <leetcode/Solution153.hpp>
 #include <leetcode/Solution162.hpp>
+#include <leetcode/Solution209.hpp>
 #include <leetcode/Solution438.hpp>
 #include <leetcode/Solution713.hpp>
 #include <leetcode/Solution82.hpp>
@@ -236,6 +237,62 @@ main( int /*argc*/, char** /*argv*/ ) -> int
         if( solution.findPeakElement( in5 ) != 0 && solution.findPeakElement( in5 ) != 5 )
         {
             std::cerr << "Example 162-5 not passed" << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution209 solution;
+        const uint32_t expected = 2;
+        std::vector< uint32_t > in1{ 2, 3, 1, 2, 4, 3 };
+        const auto actual = solution.minSubArrayLen( 7, in1 );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 209-1 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution209 solution;
+        const uint32_t expected = 1;
+        std::vector< uint32_t > in1{ 1, 4, 4 };
+        const auto actual = solution.minSubArrayLen( 4, in1 );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 209-2 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution209 solution;
+        const uint32_t expected = 0;
+        std::vector< uint32_t > in1{ 1, 1, 1, 1, 1, 1, 1, 1 };
+        const auto actual = solution.minSubArrayLen( 11, in1 );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 209-3 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution209 solution;
+        const uint32_t expected = 5;
+        std::vector< uint32_t > in1{ 1, 2, 3, 4, 5 };
+        const auto actual = solution.minSubArrayLen( 15, in1 );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 209-4 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
         }
     }
 
