@@ -1,5 +1,7 @@
 #include <leetcode/Solution82.hpp>
 
+#include <string>
+
 namespace leetcode
 {
 

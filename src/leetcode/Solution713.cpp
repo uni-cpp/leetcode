@@ -1,5 +1,7 @@
 #include <leetcode/Solution713.hpp>
 
+#include <cstddef>
+
 namespace leetcode
 {
 

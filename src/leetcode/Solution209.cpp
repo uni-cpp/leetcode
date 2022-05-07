@@ -1,6 +1,7 @@
 #include <leetcode/Solution209.hpp>
 
 #include <algorithm>
+#include <limits>
 
 namespace leetcode
 {
