@@ -3,20 +3,20 @@
 namespace leetcode
 {
 
-//   /
-//  /
-// /
+//   /    - could be that
+//  /     - could be that
+// /      - could be that
 
-// \
-//  \
-//   \
+// \     - could be that
+//  \    - could be that
+//   \   - could be that
 
 //
-//     /\
-//    /  \
-//   /    \
-//  /      \
-// /
+//     /\     - could be that
+//    /  \    - could be that
+//   /    \   - could be that
+//  /      \  - could be that
+// /          - could be that
 
 // if (num[i] > num[i+1]) => return num[i]
 

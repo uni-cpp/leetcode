@@ -1,4 +1,3 @@
-
 project( leetcode )
 
 set( HEADERS
@@ -29,12 +28,13 @@ set( SOURCES
     "src/leetcode/Solution986.cpp"
 )
 
-# treat_all_warnings_as_errors()
+treat_all_warnings_as_errors()
 
 add_executable( ${PROJECT_NAME}
     ${HEADERS}
     ${SOURCES}
 )
+add_executable( uni::leetcode ALIAS ${PROJECT_NAME} )
 
 target_include_directories( ${PROJECT_NAME}
     PRIVATE
