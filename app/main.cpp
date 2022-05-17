@@ -2,6 +2,7 @@
 #include <leetcode/Solution15.hpp>
 #include <leetcode/Solution153.hpp>
 #include <leetcode/Solution162.hpp>
+#include <leetcode/Solution200.hpp>
 #include <leetcode/Solution209.hpp>
 #include <leetcode/Solution438.hpp>
 #include <leetcode/Solution713.hpp>
@@ -239,6 +240,37 @@ main( int /*argc*/, char** /*argv*/ ) -> int
             std::cerr << "Example 162-5 not passed" << std::endl;
         }
     }
+
+    {
+        leetcode::Solution200 solution;
+        constexpr uint32_t expected = 1U;
+
+        std::vector< std::vector< char > > in1 = { { '1', '1', '1', '1', '0' }, { '1', '1', '0', '1', '0' }, { '1', '1', '0', '0', '0' }, { '0', '0', '0', '0', '0' } };
+        const auto actual = solution.numIslands( in1 );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 200-1 not passed." << std::endl;
+            std::cerr << "Actual: " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution200 solution;
+        constexpr uint32_t expected = 3U;
+
+        std::vector< std::vector< char > > in2 = { { '1', '1', '0', '0', '0' }, { '1', '1', '0', '0', '0' }, { '0', '0', '1', '0', '0' }, { '0', '0', '0', '1', '1' } };
+        const auto actual = solution.numIslands( in2 );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 200-2 not passed." << std::endl;
+            std::cerr << "Actual: " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
 
     {
         leetcode::Solution209 solution;
