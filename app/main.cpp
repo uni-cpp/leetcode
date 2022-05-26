@@ -5,6 +5,7 @@
 #include <leetcode/Solution200.hpp>
 #include <leetcode/Solution209.hpp>
 #include <leetcode/Solution438.hpp>
+#include <leetcode/Solution547.hpp>
 #include <leetcode/Solution713.hpp>
 #include <leetcode/Solution82.hpp>
 #include <leetcode/Solution844.hpp>
@@ -271,7 +272,6 @@ main( int /*argc*/, char** /*argv*/ ) -> int
         }
     }
 
-
     {
         leetcode::Solution209 solution;
         const uint32_t expected = 2;
@@ -362,6 +362,80 @@ main( int /*argc*/, char** /*argv*/ ) -> int
         if( actual != expected )
         {
             std::cerr << "Example 438-3 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::DisjointSet disjoint_set( 5 );
+        disjoint_set.unite( 0, 2 );
+        disjoint_set.unite( 4, 2 );
+        disjoint_set.unite( 3, 1 );
+        constexpr bool expected{ true };
+        const auto actual = ( disjoint_set.find( 4 ) == disjoint_set.find( 0 ) );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 547-DisjointSet-1 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::DisjointSet disjoint_set( 5 );
+        disjoint_set.unite( 0, 2 );
+        disjoint_set.unite( 4, 2 );
+        disjoint_set.unite( 3, 1 );
+        constexpr bool expected{ false };
+        const auto actual = ( disjoint_set.find( 1 ) == disjoint_set.find( 0 ) );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 547-DisjointSet-2 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution547 solution;
+        constexpr uint32_t expected{ 2U };
+        const std::vector< std::vector< uint8_t > > in1{ { 1, 1, 0 }, { 1, 1, 0 }, { 0, 0, 1 } };
+        const auto actual = solution.findCircleNum( in1 );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 547-1 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution547 solution;
+        constexpr uint32_t expected{ 3U };
+        const std::vector< std::vector< uint8_t > > in2{ { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
+        const auto actual = solution.findCircleNum( in2 );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 547-2 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution547 solution;
+        constexpr uint32_t expected{ 1U };
+        const std::vector< std::vector< uint8_t > > in3{ { 1, 0, 0, 1 }, { 0, 1, 1, 0 }, { 0, 1, 1, 1 }, { 1, 0, 1, 1 } };
+        const auto actual = solution.findCircleNum( in3 );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 547-3 not passed." << std::endl;
             std::cerr << "Actual " << actual << std::endl;
             std::cerr << "Expected: " << expected << std::endl;
         }
