@@ -29,6 +29,7 @@
 //  The recursive approach is fine. You may assume implicit stack space does not count as extra space for this problem.
 
 #pragma once
+
 #include <cstdint>
 #include <memory>
 #include <numeric>
