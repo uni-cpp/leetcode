@@ -7,6 +7,7 @@
 #include <leetcode/Solution209.hpp>
 #include <leetcode/Solution438.hpp>
 #include <leetcode/Solution547.hpp>
+#include <leetcode/Solution572.hpp>
 #include <leetcode/Solution713.hpp>
 #include <leetcode/Solution82.hpp>
 #include <leetcode/Solution844.hpp>
@@ -485,6 +486,36 @@ main( int /*argc*/, char** /*argv*/ ) -> int
         if( actual != expected )
         {
             std::cerr << "Example 547-3 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution572 solution;
+        constexpr bool expected{ true };
+        const auto tree = leetcode::create_tree( { 3, 4, 5, 1, 2 } );
+        const auto subtree = leetcode::create_tree( { 4, 1, 2 } );
+        const auto actual = solution.isSubtree( &tree->front( ), &subtree->front( ) );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 572-1 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution572 solution;
+        constexpr bool expected{ false };
+        const auto tree = leetcode::create_tree( { 3, 4, 5, 1, 2, leetcode::NULL_VALUE, leetcode::NULL_VALUE, leetcode::NULL_VALUE, leetcode::NULL_VALUE, 0 } );
+        const auto subtree = leetcode::create_tree( { 4, 1, 2 } );
+        const auto actual = solution.isSubtree( &tree->front( ), &subtree->front( ) );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 572-2 not passed." << std::endl;
             std::cerr << "Actual " << actual << std::endl;
             std::cerr << "Expected: " << expected << std::endl;
         }
