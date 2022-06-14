@@ -30,14 +30,22 @@
 
 #pragma once
 #include <cstdint>
+#include <memory>
+#include <numeric>
+#include <string>
+#include <vector>
 
 namespace leetcode
 {
 
+
+// Some nodes can be empty
+constexpr int32_t NULLPTR_VALUE = std::numeric_limits< int32_t >::max( );
+
 // Definition for a Node.
 struct Node
 {
-    int32_t val{ 0 };
+    int32_t val{ NULLPTR_VALUE };
     Node* left{ nullptr };
     Node* right{ nullptr };
     Node* next{ nullptr };
@@ -49,6 +57,11 @@ struct Node
     {
     }
 };
+
+std::unique_ptr< std::vector< Node > > create_node_list( const std::vector< int32_t >& values );
+
+std::string serialize( Node* first_node );
+std::string serialize_next_bfs( Node* first_node );
 
 class Solution117
 {

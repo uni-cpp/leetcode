@@ -164,17 +164,50 @@ main( int /*argc*/, char** /*argv*/ ) -> int
 
     {
         // leetcode::Solution117 solution;
-        //         auto* in1 = leetcode::create_linked_list( { 1, 2, 2 } );
+        auto in0 = leetcode::create_node_list( { 1, 2, 3, 4, 5, std::numeric_limits< int32_t >::max( ), 7 } );
+        if( !in0 || in0->size( ) != 7 )
+        {
+            std::cerr << "Example 117-create-node-list not passed." << std::endl;
+        }
 
-        //        constexpr auto expected = "[1]";
-        //        const auto actual = leetcode::serialize( solution.deleteDuplicates( in1 ) );
+        constexpr auto expected = "[1,2,3,4,5,null,7]";
+        const auto actual = leetcode::serialize( &( in0->front( ) ) );
 
-        //        if( actual != expected )
-        //        {
-        //            std::cerr << "Example 117-1 not passed." << std::endl;
-        //            std::cerr << "Actual " << actual << std::endl;
-        //            std::cerr << "Expected: " << expected << std::endl;
-        //        }
+        if( actual != expected )
+        {
+            std::cerr << "Example 117-test-serialization not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution117 solution;
+        auto in1 = leetcode::create_node_list( { 1, 2, 3, 4, 5, std::numeric_limits< int32_t >::max( ), 7 } );
+
+        constexpr auto expected = "[1,null,2,3,null,4,5,7,null]";
+        const auto actual = leetcode::serialize_next_bfs( solution.connect( &in1->front( ) ) );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 117-1 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution117 solution;
+
+        constexpr auto expected = "[]";
+        const auto actual = leetcode::serialize_next_bfs( solution.connect( nullptr ) );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 117-2 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
     }
 
     {
