@@ -1,6 +1,7 @@
 #include <leetcode/Solution1091.hpp>
 #include <leetcode/Solution11.hpp>
 #include <leetcode/Solution117.hpp>
+#include <leetcode/Solution146.hpp>
 #include <leetcode/Solution15.hpp>
 #include <leetcode/Solution153.hpp>
 #include <leetcode/Solution162.hpp>
@@ -209,6 +210,50 @@ main( int /*argc*/, char** /*argv*/ ) -> int
             std::cerr << "Example 117-2 not passed." << std::endl;
             std::cerr << "Actual " << actual << std::endl;
             std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution146 solution( 2 );
+        solution.put( 1, 1 );
+        solution.put( 2, 2 );
+        if( solution.get( 1 ) != 1 )
+        {
+            std::cerr << "Example 146-1-1 not passed." << std::endl;
+        }
+        solution.put( 3, 3 );
+        if( solution.get( 2 ) != -1 )
+        {
+            std::cerr << "Example 146-1-2 not passed." << std::endl;
+        }
+        solution.put( 4, 4 );
+        if( solution.get( 1 ) != -1 )
+        {
+            std::cerr << "Example 146-1-3 not passed." << std::endl;
+        }
+        if( solution.get( 3 ) != 3 )
+        {
+            std::cerr << "Example 146-1-4 not passed." << std::endl;
+        }
+        if( solution.get( 4 ) != 4 )
+        {
+            std::cerr << "Example 146-1-5 not passed." << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution146 solution( 2 );
+        solution.put( 2, 1 );
+        solution.put( 1, 1 );
+        solution.put( 2, 3 );
+        solution.put( 4, 1 );
+        if( solution.get( 1 ) != -1 )
+        {
+            std::cerr << "Example 146-2-1 not passed." << std::endl;
+        }
+        if( solution.get( 2 ) != 3 )
+        {
+            std::cerr << "Example 146-2-2 not passed." << std::endl;
         }
     }
 

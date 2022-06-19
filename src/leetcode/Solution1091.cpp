@@ -168,7 +168,7 @@ Solution1091::shortestPathBinaryMatrix( const Grid& grid )
                     continue;
                 }
 
-                std::cout << "Found more effective route!" << std::endl;
+                // std::cout << "Found more effective route!" << std::endl;
                 current_visited[ neighbour.coords.first ][ neighbour.coords.second ] = neighbour.distance;
                 // TODO Somehow update route. PUSH IT not great, may be better to save prev element in visited with current distance?
                 neighbour.weight = neighbour.distance + calculate_weight( neighbour.coords, grid, is_forward );
