@@ -1,6 +1,7 @@
 #include <leetcode/Solution1091.hpp>
 #include <leetcode/Solution11.hpp>
 #include <leetcode/Solution117.hpp>
+#include <leetcode/Solution130.hpp>
 #include <leetcode/Solution146.hpp>
 #include <leetcode/Solution15.hpp>
 #include <leetcode/Solution153.hpp>
@@ -208,6 +209,36 @@ main( int /*argc*/, char** /*argv*/ ) -> int
         if( actual != expected )
         {
             std::cerr << "Example 117-2 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution130 solution;
+
+        const std::vector< std::vector< char > > expected{ { 'X' } };
+        std::vector< std::vector< char > > actual{ { 'X' } };
+        solution.solve( actual );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 130-1 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution130 solution;
+
+        const std::vector< std::vector< char > > expected{ { 'X', 'X', 'X', 'X' }, { 'X', 'X', 'X', 'X' }, { 'X', 'X', 'X', 'X' }, { 'X', 'O', 'X', 'X' } };
+        std::vector< std::vector< char > > actual{ { 'X', 'X', 'X', 'X' }, { 'X', 'O', 'O', 'X' }, { 'X', 'X', 'O', 'X' }, { 'X', 'O', 'X', 'X' } };
+        solution.solve( actual );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 130-2 not passed." << std::endl;
             std::cerr << "Actual " << actual << std::endl;
             std::cerr << "Expected: " << expected << std::endl;
         }
