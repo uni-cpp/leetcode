@@ -12,6 +12,7 @@
 #include <leetcode/Solution547.hpp>
 #include <leetcode/Solution572.hpp>
 #include <leetcode/Solution713.hpp>
+#include <leetcode/Solution797.hpp>
 #include <leetcode/Solution82.hpp>
 #include <leetcode/Solution844.hpp>
 #include <leetcode/Solution986.hpp>
@@ -621,6 +622,34 @@ main( int /*argc*/, char** /*argv*/ ) -> int
         if( actual != expected )
         {
             std::cerr << "Example 713-2 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution797 solution;
+        const leetcode::Solution797::Paths expected{ { 0, 1, 3 }, { 0, 2, 3 } };
+        leetcode::Solution797::GraphNodes in1{ { 1, 2 }, { 3 }, { 3 }, {} };
+        const auto actual = solution.allPathsSourceTarget( in1 );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 797-1 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution797 solution;
+        const leetcode::Solution797::Paths expected{ { 0, 4 }, { 0, 3, 4 }, { 0, 1, 3, 4 }, { 0, 1, 2, 3, 4 }, { 0, 1, 4 } };
+        leetcode::Solution797::GraphNodes in2{ { 4, 3, 1 }, { 3, 2, 4 }, { 3 }, { 4 }, {} };
+        const auto actual = solution.allPathsSourceTarget( in2 );
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 797-2 not passed." << std::endl;
             std::cerr << "Actual " << actual << std::endl;
             std::cerr << "Expected: " << expected << std::endl;
         }
