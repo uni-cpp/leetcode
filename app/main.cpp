@@ -12,6 +12,7 @@
 #include <leetcode/Solution547.hpp>
 #include <leetcode/Solution572.hpp>
 #include <leetcode/Solution713.hpp>
+#include <leetcode/Solution78.hpp>
 #include <leetcode/Solution797.hpp>
 #include <leetcode/Solution82.hpp>
 #include <leetcode/Solution844.hpp>
@@ -92,6 +93,34 @@ main( int /*argc*/, char** /*argv*/ ) -> int
         if( actual != expected )
         {
             std::cerr << "Example 15-3 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution78 solution;
+        leetcode::Solution78::Set in1{ 1, 2, 3 };
+        const auto actual = solution.subsets( in1 );
+        const leetcode::Solution78::Sets expected = { { }, { 1 }, { 2 }, { 1, 2 }, { 3 }, { 1, 3 }, { 2, 3 }, { 1, 2, 3 } };
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 78-1 not passed." << std::endl;
+            std::cerr << "Actual " << actual << std::endl;
+            std::cerr << "Expected: " << expected << std::endl;
+        }
+    }
+
+    {
+        leetcode::Solution78 solution;
+        leetcode::Solution78::Set in2{ 0 };
+        const auto actual = solution.subsets( in2 );
+        const leetcode::Solution78::Sets expected = { { }, { 0 } };
+
+        if( actual != expected )
+        {
+            std::cerr << "Example 78-2 not passed." << std::endl;
             std::cerr << "Actual " << actual << std::endl;
             std::cerr << "Expected: " << expected << std::endl;
         }
